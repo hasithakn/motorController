@@ -1,8 +1,0 @@
-prefix=/home/hasitha/rPI/gopigo_ws-master/install
-
-Name: gopigo_state_updater
-Description: Description of gopigo_state_updater
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/hasitha/rPI/gopigo_ws-master/install/lib 
-Requires: 

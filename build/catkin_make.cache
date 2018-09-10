@@ -1,2 +1,0 @@
-diffdrive_controller:diffdrive_odom:gopigo_controller:gopigo_description:gopigo_state_updater:nav_behaviors
--DCATKIN_DEVEL_PREFIX=/home/hasitha/rPI/gopigo_ws-master/devel -DCMAKE_INSTALL_PREFIX=/home/hasitha/rPI/gopigo_ws-master/install -G Unix Makefiles

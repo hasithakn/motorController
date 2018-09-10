@@ -27,25 +27,25 @@ speedR = GPIO.PWM(speedRightPin, 1000)
 
 def motorL(func,data):
 	if(func==0):
-		speedL.start(map(data))
+		speedL.start(mapperTo(data))
 		GPIO.output(PWM_FORWARD_LEFT_PIN, GPIO.LOW)
 		GPIO.output(PWM_REVERSE_LEFT_PIN, GPIO.HIGH)
 	elif(func==1):
-		speedL.start(map(data))
+		speedL.start(mapperTo(data))
 		GPIO.output(PWM_FORWARD_LEFT_PIN, GPIO.HIGH)
 		GPIO.output(PWM_REVERSE_LEFT_PIN, GPIO.LOW)
 
 def motorR(func,data):
 	if(func==0):
-		speedR.start(map(data))
+		speedR.start(mapperTo(data))
 		GPIO.output(PWM_FORWARD_RIGHT_PIN, GPIO.LOW)
 		GPIO.output(PWM_REVERSE_RIGHT_PIN, GPIO.HIGH)
 	elif(func==1):
-		speedR.start(map(data))
+		speedR.start(mapperTo(data))
 		GPIO.output(PWM_FORWARD_RIGHT_PIN, GPIO.HIGH)
 		GPIO.output(PWM_REVERSE_RIGHT_PIN, GPIO.LOW)
 
-def map(k):
+def mapperTo(k):
 	y=k/255
  	return (y*100)
 

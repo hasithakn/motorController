@@ -2,6 +2,12 @@
 import rospy
 import roslib
 
+import os,sys,inspect 
+current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))) 
+parent_dir = os.path.dirname(os.path.dirname(current_dir)) 
+import motorDriver.MotorLib as m
+
+
 # Messages
 from std_msgs.msg import Float32
 
@@ -166,6 +172,15 @@ class ControlsToMotors:
       if wheel == 'right':
         if motor_command >= 0: gopigo.motor2(1,motor_command_raw)
         elif motor_command < 0: gopigo.motor2(0,motor_command_raw)
+    else:
+      motor_command_raw = int(abs(motor_command))
+      import gopigo
+      if wheel == 'left':
+        if motor_command >= 0: m.motorL(1,motor_command_raw)
+        elif motor_command < 0: m.motorL(0,motor_command_raw)
+      if wheel == 'right':
+        if motor_command >= 0: m.motorR(1,motor_command_raw)
+        elif motor_command < 0: m.motorR(0,motor_command_raw)
 
   def lwheel_update(self):
     # Compute target angular velocity
